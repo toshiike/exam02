@@ -48,3 +48,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 
 gem 'rails_12factor', group: :production
+
+group :development do
+  gem 'letter_opener_web'
+end
