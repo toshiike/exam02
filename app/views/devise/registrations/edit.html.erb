@@ -21,6 +21,8 @@
   </div>
   <br>
 
+  <% if @user.provider.blank? %>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -47,6 +49,15 @@
     <br>
     <i>(＊変更を反映するには、現在のパスワード必須入力)</i><br />
     <%= f.password_field :current_password, autocomplete: "off",class:"form-control" %>
+  </div>
+  <br>
+
+  <% end %>
+
+  <div class="field">
+    <%= profile_img(@user) if profile_img(@user) %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
   </div>
   <br>
 
