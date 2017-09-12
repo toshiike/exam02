@@ -11,6 +11,7 @@
   <h4><strong>タイトル：<%= instagram.title %></strong></h4>
    <p>内容：<%= instagram.content %></p>
    <p>作成者: <%= instagram.user.name %><p>
+   <p>画像: <%= image_tag(instagram.image) %><p>
 <%= link_to "編集", edit_instagram_path(instagram.id), class: 'btn btn-default btn-sm btn-success' %><br>
 <%= link_to "削除", instagram_path(instagram.id), method: :delete, data: { confirm: '本当に削除していいですか？'} , class: 'btn btn-default btn-sm btn btn-danger' %>
 </div>
